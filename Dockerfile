@@ -1,6 +1,6 @@
 # vim: filetype=dockerfile
 
-ARG FLAVOR=${TARGETARCH}
+ARG FLAVOR=cpu
 ARG PARALLEL=8
 
 ARG ROCMVERSION=6.3.3

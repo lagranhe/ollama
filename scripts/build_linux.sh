@@ -27,14 +27,6 @@ if echo $PLATFORM | grep "amd64" > /dev/null; then
     if echo $PLATFORM | grep "," > /dev/null ; then
        outDir="./dist/linux_amd64"
     fi
-    docker buildx build \
-        --output type=local,dest=${outDir} \
-        --platform=linux/amd64 \
-        ${OLLAMA_COMMON_BUILD_ARGS} \
-        --build-arg FLAVOR=rocm \
-        --target archive \
-        -f Dockerfile \
-        .
 fi
 
 # buildx behavior changes for single vs. multiplatform
