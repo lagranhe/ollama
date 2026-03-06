@@ -6,7 +6,6 @@
 #git switch upgrade-go-to-1.24.6
 #git pull
 
-mkdir /root/ollama
-cd /root/ollama
 dnf install git zstd docker -y
-s./scripts/build_linux.sh
+docker login docker.io
+./scripts/build_linux.sh
