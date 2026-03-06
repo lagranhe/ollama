@@ -9,7 +9,7 @@ ARG JETPACK6VERSION=r36.4.0
 ARG CMAKEVERSION=3.31.2
 ARG VULKANVERSION=1.4.321.1
 
-FROM --platform=linux/amd64 rocm/dev-almalinux-8:${ROCMVERSION}-complete AS base-amd64
+FROM --platform=linux/amd64 docker.io/rocm/dev-almalinux-8:${ROCMVERSION}-complete AS base-amd64
 RUN dnf install -y yum-utils ccache gcc-toolset-11-gcc gcc-toolset-11-gcc-c++ gcc-toolset-11-binutils
 ENV PATH=/opt/rh/gcc-toolset-11/root/usr/bin:$PATH
 
