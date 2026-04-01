@@ -11,6 +11,9 @@ dnf install git zstd docker -y
 docker login docker.io
 ./scripts/build_linux.sh
 
+#Ignore: tar: ./lib/ollama/rocm: Cannot stat: No such file or directory
+
 cp -R ./dist/usr/lib/ollama/ /tmp/ollama/
 cp ./dist/bin/ollama /tmp/ollama/
 
+tar -czvf /tmp/ollama.tar.gz --dereference -C /tmp ollama
